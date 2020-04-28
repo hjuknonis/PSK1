@@ -3,12 +3,11 @@ package lt.vu.persistence;
 import lt.vu.entities.Library;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
 
-@RequestScoped
+@ApplicationScoped
 public class LibraryDAO {
     @Inject
     private EntityManager em;

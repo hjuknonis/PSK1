@@ -2,12 +2,12 @@ package lt.vu.persistence;
 
 import lt.vu.entities.Book;
 
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import java.util.List;
 
-@RequestScoped
+@ApplicationScoped
 public class BookDAO {
 
     @Inject
