@@ -1,0 +1,10 @@
+<datasources>
+    <datasource jndi-name="LibraryDS" pool-name="LibraryDS">
+        <driver>mysql</driver>
+        <connection-url>jdbc:mysql://localhost:3306/psk</connection-url>
+        <security>
+            <user-name>root</user-name>
+            <password>aaaa</password>
+        </security>
+    </datasource>
+</datasources>
