@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Map;
 
 @Model
-@RequestScoped
 public class BookList{
 
     @Inject
@@ -55,6 +54,6 @@ public class BookList{
     public String createBook() {
         book.setLibrary(this.library);
         bookDAO.persist(book);
-        return "books?libraryId=" + this.library.getId();
+        return "/books?faces-redirect=true&libraryId=" + this.library.getId();
     }
 }

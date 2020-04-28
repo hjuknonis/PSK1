@@ -6,7 +6,6 @@ import lt.vu.entities.Library;
 import lt.vu.persistence.LibraryDAO;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -37,7 +36,7 @@ public class LibraryList {
     @Transactional
     public String createLibrary() {
         this.libraryDAO.persist(library);
-        return "success";
+        return "index?faces-redirect=true";
     }
 
 }
