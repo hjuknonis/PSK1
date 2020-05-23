@@ -22,8 +22,11 @@ public class BookDAO {
         this.em.persist(book);
     }
 
+    public Book update(Book book){ return em.merge(book); }
+
     public void remove(Book book) { this.em.remove(book); }
 
     public Book findOne(Integer id) { return em.find(Book.class, id); }
+
 
 }

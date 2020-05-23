@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @NamedQueries(value = {
@@ -17,6 +18,10 @@ public class Book implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @Version
+    @Column(name = "Lock_Version")
+    private Integer version;
 
     @Column(name = "Title")
     private String title;

@@ -11,6 +11,7 @@
     <ul>
         <ui:repeat value="#{bookList.library.books}" var="book">
             <li>#{book.author} - #{book.title}</li>
+            <h:link value="Edit" outcome="editBook?bookId=#{book.id}" />
         </ui:repeat>
     </ul>
     <h:form>
@@ -20,7 +21,6 @@
             <f:param name="libraryId" value="#{bookList.library.id}" />
         </h:commandButton>
     </h:form>
-
     <h:link outcome="index" value="Back to library page"/>
 </h:body>
 </html>

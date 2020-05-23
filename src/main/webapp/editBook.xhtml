@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+>
+<h:head/>
+<h:body>
+    <h2>#{editBook.book.title}</h2>
+    <h:form>
+        <h:inputText a:placeholder="title" value="#{editBook.book.title}" required="true" />
+        <h:inputText a:placeholder="author" value="#{editBook.book.author}" required="true" />
+        <h:commandButton value="Update book" action="#{editBook.update}" />
+    </h:form>
+    <h:outputText value="Someone has changed this book, please try again" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
+</h:body>
+</html>
