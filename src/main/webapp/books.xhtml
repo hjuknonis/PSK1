@@ -20,7 +20,11 @@
         <h:commandButton value="Add book to the library" action="#{bookList.createBook}" >
             <f:param name="libraryId" value="#{bookList.library.id}" />
         </h:commandButton>
-    </h:form>
+    </h:form><br/>
+    <h:form>
+        <h:commandButton value="Calculate total books in this library" disabled="#{generateBookCount.generating}" action="#{generateBookCount.generate()}" /><br/>
+        <h:outputText value="#{generateBookCount.generationResult}" />
+    </h:form><br/>
     <h:link outcome="index" value="Back to library page"/>
 </h:body>
 </html>

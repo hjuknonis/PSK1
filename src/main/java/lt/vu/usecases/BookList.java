@@ -11,13 +11,18 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.transaction.Transactional;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-@Model
-public class BookList{
+@ViewScoped
+@Named
+@Getter @Setter
+public class BookList implements Serializable {
 
     @Inject
     private LibraryDAO libraryDAO;
@@ -25,15 +30,10 @@ public class BookList{
     @Inject
     private BookDAO bookDAO;
 
-    @Getter
-    @Setter
     private Book book = new Book();
 
-    @Getter
-    @Setter
     private Library library = new Library();
 
-    @Getter
     private List<Book> bookList;
 
 
