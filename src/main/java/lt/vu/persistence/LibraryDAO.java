@@ -1,5 +1,6 @@
 package lt.vu.persistence;
 
+import lt.vu.entities.Book;
 import lt.vu.entities.Library;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -19,6 +20,8 @@ public class LibraryDAO {
     public void persist(Library library) {
         this.em.persist(library);
     }
+
+    public Library update(Library library){ return em.merge(library); }
 
     public Library findOne(Integer id) {
         return em.find(Library.class, id);

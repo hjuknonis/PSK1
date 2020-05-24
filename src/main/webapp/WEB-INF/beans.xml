@@ -11,4 +11,7 @@
     <decorators>
         <class>lt.vu.decorator.SimpleDateDecorator</class>
     </decorators>
+    <interceptors>
+        <class>lt.vu.interceptors.MethodLogger</class>
+    </interceptors>
 </beans>
