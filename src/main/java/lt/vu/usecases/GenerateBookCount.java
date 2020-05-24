@@ -1,6 +1,6 @@
 package lt.vu.usecases;
 
-import lt.vu.NumberGenerator;
+import lt.vu.alternatives.NumberGenerator;
 import lt.vu.interceptors.LoggedInvocation;
 
 import javax.enterprise.context.SessionScoped;

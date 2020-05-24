@@ -6,6 +6,9 @@
                       http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
         bean-discovery-mode="all">
     <alternatives>
-        <class>lt.vu.SimpleNumberGenerator</class>
+        <class>lt.vu.alternatives.SimpleNumberGenerator</class>
     </alternatives>
+    <decorators>
+        <class>lt.vu.decorator.SimpleDateDecorator</class>
+    </decorators>
 </beans>

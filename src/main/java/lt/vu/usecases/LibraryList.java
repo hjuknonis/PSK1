@@ -2,6 +2,7 @@ package lt.vu.usecases;
 
 import lombok.Getter;
 import lombok.Setter;
+import lt.vu.decorator.DateTemplate;
 import lt.vu.entities.Library;
 import lt.vu.persistence.LibraryDAO;
 
@@ -16,6 +17,9 @@ public class LibraryList {
 
     @Inject
     private LibraryDAO libraryDAO;
+
+    @Inject
+    private DateTemplate dateTemplate;
 
     @Getter
     @Setter
@@ -37,6 +41,10 @@ public class LibraryList {
     public String createLibrary() {
         this.libraryDAO.persist(library);
         return "index?faces-redirect=true";
+    }
+
+    public String getDate(){
+        return dateTemplate.getDate();
     }
 
 }
